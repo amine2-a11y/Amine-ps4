@@ -77,6 +77,11 @@
                         </svg>
                     </button>
                 </div>
+                <label id="visibleAutoJb"
+                    class="flex items-center gap-2 p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors text-white/80 hover:text-white cursor-pointer select-none">
+                    <input type="checkbox" id="visibleAutoJbCheck" checked class="w-4 h-4 accent-blue-500">
+                    <span>Auto Jailbreak</span>
+                </label>
                 <button id="updateCache"
                     class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors text-white/80 hover:text-white">
                     Update Cache
@@ -666,6 +671,25 @@
             }
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const visible = document.getElementById('visibleAutoJbCheck');
+            const existing = document.getElementById('autoJbRetry');
+            if (!visible) return;
+
+            visible.checked = existing ? existing.checked : true;
+
+            visible.addEventListener('change', function () {
+                if (existing) {
+                    existing.checked = visible.checked;
+                    if (typeof setAutoJbRetry === 'function') {
+                        setAutoJbRetry(visible.checked);
+                    }
+                }
+            });
+        });
+    </script>
+
     <!-- Choose index.js or index-legacy.js for older browsers, generated with Babel -->
     <script id="main-logic-loader">
         (function () {
