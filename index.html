@@ -672,21 +672,38 @@
         });
     </script>
     <script>
+        // Visible Auto Jailbreak switch.
+        // ON = use the existing exploit flow automatically.
+        // OFF = wait for the user to press the exploit button.
         document.addEventListener('DOMContentLoaded', function () {
             const visible = document.getElementById('visibleAutoJbCheck');
             const existing = document.getElementById('autoJbRetry');
             if (!visible) return;
 
-            visible.checked = existing ? existing.checked : true;
+            const saved = localStorage.getItem('visibleAutoJb');
+            visible.checked = saved === null ? true : saved === '1';
 
-            visible.addEventListener('change', function () {
+            const applySetting = () => {
+                localStorage.setItem('visibleAutoJb', visible.checked ? '1' : '0');
+
                 if (existing) {
                     existing.checked = visible.checked;
                     if (typeof setAutoJbRetry === 'function') {
                         setAutoJbRetry(visible.checked);
                     }
                 }
-            });
+            };
+
+            visible.addEventListener('change', applySetting);
+            applySetting();
+
+            // Start only when the user has enabled Auto Jailbreak.
+            if (visible.checked && typeof isPS4 !== 'undefined' && isPS4) {
+                setTimeout(function () {
+                    const run = document.getElementById('exploitRun');
+                    if (run) run.click();
+                }, 1200);
+            }
         });
     </script>
 
