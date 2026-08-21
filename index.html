@@ -29,7 +29,7 @@
     <script>
         // Prevent "Theme Flash" by applying the href before the body renders
         var savedTheme = localStorage.getItem('theme') || "index";
-        var savedColor = localStorage.getItem('color') || "default";
+        var savedColor = localStorage.getItem('color') || "gold";
         if (savedTheme) {
             document.getElementById('main-stylesheet').setAttribute('href', './includes/css/layouts/' + savedTheme + '.css');
         }
@@ -575,6 +575,10 @@
                     <label class="flex items-center text-white/80">
                         <input type="radio" name="colorTheme" value="catppuccino" onchange="setColors(this.value);">
                         <p id="catppuccinoColor">Catppuccino</p>
+                    </label>
+                    <label class="flex items-center text-white/80">
+                        <input type="radio" name="colorTheme" value="gold" onchange="setColors(this.value);">
+                        <p id="goldColor">Gold Edition</p>
                     </label>
                 </div>
             </div>
