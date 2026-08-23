@@ -3,7 +3,7 @@ body {
     font-family: sans-serif;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
-    
+    background: #050805 url("../../assets/backgrounds/webkitty-gold-9xx.png?v=gold9") center center / cover no-repeat fixed;
 }
 
 .mainContainer {

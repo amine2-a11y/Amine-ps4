@@ -1,8 +1,9 @@
 CACHE MANIFEST
-# v2
+# v3
 # Generated on 2026-08-16 10:51
 
 CACHE:
+../../../includes/assets/backgrounds/webkitty-gold-9xx.png
 ../../../
 ../../../index.html
 ../../../exploit.html

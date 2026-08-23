@@ -49,16 +49,16 @@ function loadTheme() {
 }
 
 function loadColor() {
-    var savedColor = localStorage.getItem('color') || 'gold';
+    var savedColor = localStorage.getItem('color') || 'default';
 
     // Find the radio button
     var radioElement = document.querySelector(`input[name="colorTheme"][value="${savedColor}"]`);
 
     // Fallback if the saved theme doesn't exist or is invalid
     if (!radioElement) {
-        savedColor = 'gold';
-        radioElement = document.querySelector(`input[name="colorTheme"][value="gold"]`);
-        localStorage.setItem('color', 'gold');
+        savedColor = 'index';
+        radioElement = document.querySelector(`input[name="colorTheme"][value="default"]`);
+        localStorage.setItem('color', 'default');
         // Apply the CSS file
         setColors(savedColor);
     }
