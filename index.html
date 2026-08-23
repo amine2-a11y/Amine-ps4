@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>WebKitty</title>
+    <title>11.02 WebKit — Gold Edition</title>
     <meta name="description" content="WebKitty is a user-friendly, feature-rich PS4 exploit host for 6.70 - 11.02." />
     <meta name="author" content="ArabPixel">
     <meta name="keywords"
@@ -29,14 +29,39 @@
     <script>
         // Prevent "Theme Flash" by applying the href before the body renders
         var savedTheme = localStorage.getItem('theme') || "index";
-        var savedColor = localStorage.getItem('color') || "default";
+        var savedColor = "gold"; localStorage.setItem('color', 'gold');
         if (savedTheme) {
             document.getElementById('main-stylesheet').setAttribute('href', './includes/css/layouts/' + savedTheme + '.css');
         }
         if (savedColor) {
-            document.getElementById('color-stylesheet').setAttribute('href', './includes/css/colors/' + savedColor + '.css');
+            document.getElementById('color-stylesheet').setAttribute('href', './includes/css/colors/' + savedColor + '.css?v=gold-final');
         }
     </script>
+
+    <style id="gold-edition-fallback">
+      html, body { background:#050505 !important; color:#fff !important; }
+      #initial-screen, #exploit-main-screen {
+        position:relative !important;
+        background-color:#050505 !important;
+        background-image:
+          linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.38),rgba(0,0,0,.78)),
+          url("./includes/assets/backgrounds/ps4-bg.jpg") !important;
+        background-position:center center !important;
+        background-size:cover !important;
+        background-repeat:no-repeat !important;
+        background-attachment:fixed !important;
+      }
+      #initial-screen:after, #exploit-main-screen:after {
+        content:"";
+        position:absolute; inset:0; pointer-events:none; z-index:0;
+        background:radial-gradient(circle at 50% 48%,rgba(212,175,55,.18),transparent 46%);
+      }
+      #initial-screen > *, #exploit-main-screen > * { position:relative; z-index:1; }
+      #ps-logo { fill:#d4af37 !important; filter:drop-shadow(0 0 14px rgba(212,175,55,.45)); }
+      #ps-logo-container { border:1px solid rgba(212,175,55,.42); box-shadow:0 0 28px rgba(212,175,55,.14); }
+      button { border-color:rgba(212,175,55,.18) !important; }
+      button:hover { border-color:#d4af37 !important; box-shadow:0 0 18px rgba(212,175,55,.2) !important; }
+    </style>
 </head>
 
 <body class="bg-gray-900 text-white">
@@ -575,6 +600,10 @@
                     <label class="flex items-center text-white/80">
                         <input type="radio" name="colorTheme" value="catppuccino" onchange="setColors(this.value);">
                         <p id="catppuccinoColor">Catppuccino</p>
+                    </label>
+                    <label class="flex items-center text-white/80">
+                        <input type="radio" name="colorTheme" value="gold" onchange="setColors(this.value);">
+                        <p id="goldColor">Gold Edition</p>
                     </label>
                 </div>
             </div>
