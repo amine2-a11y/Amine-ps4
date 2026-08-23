@@ -1,5 +1,0 @@
-Gold PS4 theme installed.
-- Main page: index.html
-- Background: includes/assets/showcase/gold-ps4-4k.png
-- CSS: includes/assets/showcase/gold-ps4-theme.css
-Upload the project contents to GitHub while preserving the includes/ path.
