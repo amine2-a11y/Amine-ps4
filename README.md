@@ -149,7 +149,3 @@ AGPL-3.0-or-later (see [LICENSE](LICENSE)). Part of this repo belongs to the gro
 - Payload developers: for their payloads.
 
 Check the appropriate files for any **extra** contributors. Unless otherwise stated, everything here can also be credited to us.
-
-
-## Gold showcase refresh
-The showcase preview images were refreshed with a cohesive black-and-gold cinematic treatment while keeping the original UI screenshots and filenames intact.
