@@ -273,7 +273,7 @@ input[type="radio"]:checked {
 }
 
 html, body { background: #050505 !important; color: #fff !important; }
-body { background-image: url('../../assets/backgrounds/webkitty-gold-9xx.png?v=gold9-fixed') !important; background-position: center center !important; background-size: cover !important; background-repeat: no-repeat !important; background-attachment: fixed !important; }
+body { background-image: url('../../assets/backgrounds/webkitty-gold-9xx.png?v=gold9-final-final') !important; background-position: center center !important; background-size: cover !important; background-repeat: no-repeat !important; background-attachment: fixed !important; }
 .mainContainer { background: linear-gradient(rgba(0,0,0,.30), rgba(0,0,0,.68)) !important; }
 
 header, #header2, .tabs, #payloadsSection, #exploit-status-panel, #choosejb-initial,
