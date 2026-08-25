@@ -7,7 +7,15 @@ const outEl = document.getElementById("out");
 const stateEl = document.getElementById("state");
 const lines = [];
 
-function post(tag, detail) { /* OFFLINE MODE: telemetry disabled */ }
+function post(tag, detail) {
+    try {
+        const x = new XMLHttpRequest();
+        x.open("POST", "/t", true);
+        x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        x.send("PS4-S4Q&tag=" + encodeURIComponent(tag)
+             + "&detail=" + encodeURIComponent(String(detail == null ? "" : detail)));
+    } catch (e) { }
+}
 
 const VERBOSE = new URLSearchParams(location.search).get("verbose") === "1";
 

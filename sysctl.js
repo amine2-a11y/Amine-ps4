@@ -13,7 +13,15 @@ let passCount = 0, failCount = 0;
 const params = new URLSearchParams(location.search);
 const STOP_BEFORE_DOUBLE = params.get("stop") === "beforedouble";
 
-function post(tag, detail) { /* OFFLINE MODE: telemetry disabled */ }
+function post(tag, detail) {
+    try {
+        const x = new XMLHttpRequest();
+        x.open("POST", "/t", true);
+        x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        x.send("PS4-SYSCTL&tag=" + encodeURIComponent(tag)
+             + "&detail=" + encodeURIComponent(String(detail == null ? "" : detail)));
+    } catch (e) { }
+}
 
 const VERBOSE = params.get("verbose") === "1";
 const PROSE = [
