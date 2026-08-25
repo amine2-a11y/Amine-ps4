@@ -1,0 +1,41 @@
+
+/* AMINE PS4 — modern blue neon theme */
+:root{
+  --amine-bg:#070b16;
+  --amine-panel:rgba(13,20,38,.88);
+  --amine-border:rgba(73,151,255,.32);
+  --amine-glow:rgba(36,125,255,.32);
+}
+html,body{
+  background:
+    radial-gradient(circle at 78% 18%, rgba(0,119,255,.20), transparent 28%),
+    radial-gradient(circle at 18% 82%, rgba(37,87,255,.12), transparent 30%),
+    linear-gradient(135deg,#050812 0%,#0a1020 52%,#050812 100%) !important;
+  color:#eaf3ff !important;
+}
+button,.btn,.card,.panel,.settings,.menu,.modal,.box{
+  border-color:var(--amine-border) !important;
+}
+button,.btn{
+  border-radius:12px !important;
+  box-shadow:0 0 18px var(--amine-glow);
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+button:hover,.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 0 26px rgba(42,137,255,.45);
+}
+.card,.panel,.settings,.menu,.modal,.box{
+  background:var(--amine-panel) !important;
+  backdrop-filter:blur(10px);
+  box-shadow:0 12px 35px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.04);
+}
+h1,h2,h3,.title,.logo{
+  text-shadow:0 0 18px rgba(48,145,255,.42);
+}
+.amine-brand{
+  letter-spacing:.08em;
+  font-weight:800;
+  color:#fff;
+  text-shadow:0 0 20px rgba(55,150,255,.55);
+}
