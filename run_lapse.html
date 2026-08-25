@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" manifest="cache.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PS4 JAILBREAK AMINE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{min-height:100vh;background:#030711;color:#eaf5ff;font-family:"Segoe UI",Tahoma,Arial,sans-serif;overflow:hidden}
+body{position:relative}body:before{content:"";position:fixed;inset:0;background:url("preview.png") center/cover no-repeat;filter:brightness(.30) saturate(1.15);z-index:0}body:after{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 15%,rgba(0,205,255,.16),transparent 38%),rgba(2,6,14,.70);z-index:0}
+#wrap{position:relative;z-index:1;width:min(1050px,calc(100% - 24px));margin:auto;padding:22px 0}
+#header{padding:22px;text-align:center;border:1px solid rgba(78,196,255,.22);border-radius:24px;background:rgba(6,14,27,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 22px 60px rgba(0,0,0,.55)}
+#header h1{font-size:clamp(30px,6vw,54px);font-weight:950;letter-spacing:2px;background:linear-gradient(120deg,#fff,#85ebff,#5887ff);-webkit-background-clip:text;background-clip:text;color:transparent;text-transform:uppercase}
+#header .sub{margin-top:8px;color:#7f9ab5;font-size:12px;letter-spacing:3px}.phone{display:none}
+#state{margin-top:15px;padding:16px;text-align:center;border:1px solid rgba(78,196,255,.17);border-radius:18px;background:rgba(4,12,24,.75);font-size:22px;font-weight:800;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+#out{margin-top:14px;height:calc(100vh - 180px);overflow:auto;padding:16px 18px;border:1px solid rgba(80,190,255,.14);border-radius:18px;background:rgba(2,7,15,.88);white-space:pre-wrap;font:12px/1.5 Consolas,"Courier New",monospace;color:#bccbda}
+#out::-webkit-scrollbar{width:7px}#out::-webkit-scrollbar-thumb{background:rgba(50,196,255,.28);border-radius:10px}.ok{color:#71e2ad}.bad{color:#ff8e9e}.warn{color:#ffd56a}
+.footer{position:fixed;bottom:10px;left:0;right:0;text-align:center;color:rgba(139,188,220,.34);font-size:10px;letter-spacing:3px;font-weight:700}
+.loader-dots{display:inline-flex;gap:5px;margin-left:8px}.loader-dots span{width:6px;height:6px;border-radius:50%;background:#3bdcff;box-shadow:0 0 10px #3bdcff;animation:dot 1.2s infinite}.loader-dots span:nth-child(2){animation-delay:.16s}.loader-dots span:nth-child(3){animation-delay:.32s}
+@keyframes dot{0%,80%,100%{transform:scale(.55);opacity:.35}40%{transform:scale(1);opacity:1}}
+@media(max-width:600px){#wrap{width:calc(100% - 12px);padding:10px 0}#header{padding:18px 10px}#state{font-size:18px}#out{height:calc(100vh - 160px);font-size:11px}}
+</style>
+</head>
+<body>
+<div id="wrap">
+  
+  <!-- الهيدر مع اسم محمد خالد -->
+  <div id="header">
+    <h1>PS4 JAILBREAK AMINE</h1>
+    <div class="sub">
+      <span>LAPSE CHAIN</span> &bull; PS4 WEBKIT
+    </div>
+  </div>
+
+  <div id="state">
+    ⏳ جارٍ تحميل سلسلة Lapse...
+    <span class="loader-dots">
+      <span></span><span></span><span></span>
+    </span>
+  </div>
+  
+  <div id="out"></div>
+</div>
+
+<!-- شعار صغير -->
+<div class="footer">PS4 JAILBREAK AMINE • Lapse</div>
+
+<script type="module">
+  import "./chain_lapse.js";
+</script>
+</body>
+</html>
