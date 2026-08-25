@@ -8,7 +8,10 @@
   html, body { margin:0; padding:0; background:#0b0d10; color:#c8ced8;
                font:15px/1.45 "Segoe UI", system-ui, sans-serif; }
   #wrap { padding:16px 18px; }
-  #state { font-size:22px; font-weight:700; margin:0 0 10px; }
+  #state { font-size:22px; font-weight:700; margin:0 0 6px; }
+  #stage { font-size:13px; color:#8b95a3; margin:0 0 10px; }
+  #bar { height:8px; background:#18202a; border-radius:8px; overflow:hidden; margin:0 0 10px; }
+  #fill { height:100%; width:8%; background:#36d7ff; transition:width .25s ease; }
   #out { white-space:pre-wrap; font:12px/1.45 Consolas, monospace;
          background:#11151b; border:1px solid #1e2732; border-radius:5px;
          padding:10px 12px; height:calc(100vh - 141px); overflow-y:auto; }
@@ -25,9 +28,27 @@
 <body>
 <div id="brand"><img src="logo_raw.png" alt="" width="28" height="28"><b>JAILBREAK PS4 AMINE</b></div>
 <div id="wrap">
-  <div id="state">detecting firmware and selecting chain...</div>
+  <div id="state">JAILBREAK PS4 AMINE</div>
+  <div id="stage">جارٍ فحص نظام PS4 وتحضير التهكير...</div>
+  <div id="bar"><div id="fill"></div></div>
   <div id="out"></div>
 </div>
-<script type="module">import "./chain_router.mjs";</script>
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var fill = document.getElementById('fill');
+  var out = document.getElementById('out');
+  function ui(t,p){ if(stage) stage.textContent=t; if(fill) fill.style.width=p+'%'; }
+  ui('جارٍ قراءة Firmware تاع الجهاز...', 18);
+  setTimeout(function(){ ui('جارٍ تحديد Lapse / Poops حسب Firmware...', 38); }, 450);
+  setTimeout(function(){ ui('جارٍ تحضير ملفات التهكير...', 58); }, 950);
+  setTimeout(function(){ ui('جارٍ تشغيل الـChain المناسب...', 78); }, 1450);
+  var s=document.createElement('script');
+  s.type='module'; s.src='./chain_router.mjs';
+  s.onload=function(){ ui('تم اختيار الـChain — جاري التنفيذ...', 88); };
+  s.onerror=function(e){ ui('خطأ في تحميل الـChain', 0); if(out) out.textContent='تعذر تحميل chain_router.mjs'; };
+  document.body.appendChild(s);
+})();
+</script>
 </body>
 </html>
